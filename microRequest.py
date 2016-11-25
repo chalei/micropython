@@ -17,7 +17,7 @@ def monitor():
 	waktu = r[0]['LocalObservationDateTime']
 	jam = waktu[11] + waktu[12] + waktu[13] + waktu[14] + waktu[15]
 	#mengambil data dari ubidots
-	u = urequests.get("<URL dan API dari ubidots").json()
+	u = urequests.get("<URL dan API dari ubidots>").json()
 	dataRelay = u['results'][0]['value']
 	print("Pada jam:", jam)
 	print("Suhu di Tangerang adalah", suhu, "C")
