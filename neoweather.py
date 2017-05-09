@@ -10,7 +10,7 @@ np = NeoPixel(pin, 3)
 
 sta = network.WLAN(network.STA_IF)
 sta.active(True)
-sta.connect("Nau", "naura2015")
+sta.connect("ssid", "passwrd")
 sta.ifconfig()
 
 def monitor():
