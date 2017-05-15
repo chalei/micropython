@@ -17,8 +17,8 @@ while not sta_if.isconnected():
 
 myMqttClient = "miket-mqtt-client"  # can be anything unique
 adafruitIoUrl = "io.adafruit.com" 
-adafruitUsername = "chalei"  # can be found at "My Account" at adafruit.com
-adafruitAioKey = "c25185ba04a24d49975a270790ad8564"  # can be found by clicking on "VIEW AIO KEYS" when viewing an Adafruit IO Feed
+adafruitUsername = "username"  # can be found at "My Account" at adafruit.com
+adafruitAioKey = "adafruit-key"  # can be found by clicking on "VIEW AIO KEYS" when viewing an Adafruit IO Feed
 c = MQTTClient(myMqttClient, adafruitIoUrl, 0, adafruitUsername, adafruitAioKey)
 
 c.connect()
