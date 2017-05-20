@@ -28,7 +28,7 @@ i2c = machine.I2C(-1, scl=machine.Pin(5), sda=machine.Pin(4))
 oled = ssd1306.SSD1306_I2C(64, 48, i2c)
 oled.text('Monitor', 0, 0)
 oled.text('Suhu', 10, 10)
-oled.text('SBMPTN', 0, 30)
+oled.text('Adafruit', 0, 30)
 oled.text('Demo', 10, 40)
 
 oled.show()
@@ -36,15 +36,22 @@ sensor = dht.DHT22(machine.Pin(2))
 sensor.measure()
 kelembaban = sensor.humidity()
 suhu = sensor.temperature()
-c.publish("chalei/feeds/esptemp", str(suhu))  #publish num free bytes on the Heap
-  #c.subscribe("chalei/feeds/digital")
+time.sleep(2)
+c.publish("user/feeds/esptemp", str(suhu))  #publish num free bytes on the Heap
+c.publish("user/feeds/esphum", str(kelembaban))
+  #c.subscribe("user/feeds/digital")
 print("send ok")
+oled.text('Kirim', 0, 0)
+oled.text('ok', 10, 10)
+oled.show()
 time.sleep(2)	
 
 
 
 def monitor():
-	
+	sensor.measure()
+	kelembaban = sensor.humidity()
+	suhu = sensor.temperature()
 	print('kelembaban: {0:0.2f}'.format(kelembaban))
 	datahumid = '{0:0.2f}'.format(kelembaban)
 	oled.fill(0)
