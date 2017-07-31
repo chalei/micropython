@@ -4,7 +4,7 @@ import dht
 import network
 from umqtt.simple import MQTTClient
 
-yourWifiSSID = "RAHARJA"
+yourWifiSSID = " "
 yourWifiPassword = " "
 sta_if = network.WLAN(network.STA_IF)
 sta_if.active(True)
@@ -14,8 +14,8 @@ while not sta_if.isconnected():
 
 myMqttClient = "chalei-mqtt"  # can be anything unique
 adafruitIoUrl = "io.adafruit.com" 
-adafruitUsername = "chalei"  # can be found at "My Account" at adafruit.com
-adafruitAioKey = "c25185ba04a24d49975a270790ad8564"  # can be found by clicking on "VIEW AIO KEYS" when viewing an Adafruit IO Feed
+adafruitUsername = "user"  # can be found at "My Account" at adafruit.com
+adafruitAioKey = "aiokey"  # can be found by clicking on "VIEW AIO KEYS" when viewing an Adafruit IO Feed
 c = MQTTClient(myMqttClient, adafruitIoUrl, 0, adafruitUsername, adafruitAioKey)
 c.connect()
 
@@ -30,8 +30,8 @@ def monitor():
 	
 	time.sleep(1)
 	print('kelembaban: {0:0.2f}'.format(kelembaban))
-	c.publish("chalei/feeds/esptemp", str(suhu))
-	c.publish("chalei/feeds/esphum", str(kelembaban))
+	c.publish("user/feeds/esptemp", str(suhu))
+	c.publish("user/feeds/esphum", str(kelembaban))
 	time.sleep(60*10)
 	
 
