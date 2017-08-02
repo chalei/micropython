@@ -44,8 +44,8 @@ butt = Pin(0, Pin.IN, Pin.PULL_UP)
 #
 # connect the ESP8266 to local wifi network
 #
-yourWifiSSID = "Nau"
-yourWifiPassword = "naura2015"
+yourWifiSSID = " "
+yourWifiPassword = " "
 sta_if = network.WLAN(network.STA_IF)
 sta_if.active(True)
 sta_if.connect(yourWifiSSID, yourWifiPassword)
@@ -57,8 +57,8 @@ while not sta_if.isconnected():
 #
 myMqttClient = "miket-mqtt-client"  # can be anything unique
 adafruitIoUrl = "io.adafruit.com" 
-adafruitUsername = "chalei"  # can be found at "My Account" at adafruit.com
-adafruitAioKey = "c25185ba04a24d49975a270790ad8564"  # can be found by clicking on "VIEW AIO KEYS" when viewing an Adafruit IO Feed
+adafruitUsername = " "  # can be found at "My Account" at adafruit.com
+adafruitAioKey = " "  # can be found by clicking on "VIEW AIO KEYS" when viewing an Adafruit IO Feed
 c = MQTTClient(myMqttClient, adafruitIoUrl, 0, adafruitUsername, adafruitAioKey)
 
 c.connect()
