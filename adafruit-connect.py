@@ -75,8 +75,8 @@ c.connect()
 #
 while True:
   if not butt.value():
-	c.publish("chalei/feeds/digital", str(1))  #publish num free bytes on the Heap
-  #c.subscribe("chalei/feeds/digital")
+	c.publish("username/feeds/digital", str(1))  #publish num free bytes on the Heap
+ 
 	print("send ok")
 	time.sleep(2)  # number of seconds between each Publish
 
